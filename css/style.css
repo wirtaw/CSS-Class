@@ -1,0 +1,235 @@
+/* Special Elements */
+body{
+	background: white;
+	font-family:Courier,cursive;
+	font-size: 15px;
+	color:black;
+}
+h1, h2 {
+	font-family: ##fontname##;
+	background-color: transparent;
+	color: black;
+	text-transform: uppercase;
+}
+h1 {
+	font-size: 18px;
+	letter-spacing: 0px;
+	background-color: transparent;
+	font-family: ##fontname##;
+	text-transform: uppercase;
+	padding-top: 5px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 5px;
+}
+h2 {
+	font-size: 14px;
+	letter-spacing: 1px;
+	font-family: ##fontname##;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+/* Lines */
+#up{
+	background: transparent;
+	position:absolute;
+	top:0px;
+	left:-1px;
+	height:90px;
+	width:100%;
+	padding:0;
+	margin:0;
+	z-index:1;
+}
+#mid{
+	position:absolute;
+	top:1px;
+	left:0px;
+	height:100%;
+	width:100%;
+	padding:0;
+	margin:0;
+	z-index: 1;
+}
+#bot{
+	background: transparent;
+	position:absolute;
+	top:652px;
+	left:-1px;
+	height:30px;
+	width:100%;
+	padding:0;
+	margin:0;
+	z-index: 1;
+	font-size:12pt;
+}	
+/* Visual */
+#leftcontent{
+	position:absolute;
+	top:-1px;
+	left:-1px;
+	padding:2px;
+	margin:5px;
+	width:850px;
+	height:100%;
+	float: left;
+}
+#rightcontent{
+	position:absolute;
+	top:10px;
+	left:855px;
+	padding:1px 0px 5px 0px;
+	margin:5px;
+	height:100%;
+	width:400px;
+	float: left;
+}
+#centercontent{
+	left:0px;
+	padding:2px;
+	margin:0;
+	width:100%;
+	height:100%;
+	float: left;
+	font-size:16px;
+	/*border:white solid thin;*/
+}
+/* menu */
+.menu{
+    position: relative;
+    top: 0px;
+    left: 20px;
+    margin:2px;
+    padding:2px;
+    font-size:39px ;
+    font-family: ##fontname##;
+    text-decoration: none;
+    color: #666;
+    height: 39px;
+    width:140px;
+}
+.menu:hover{
+	cursor: pointer;
+	color: #ff6600;
+}
+.menu2{
+    margin:2px;
+    padding:10px;
+    font-size:24px ;
+    font-family: "Arial Narrow";
+    text-decoration: none;
+    color: #666;
+}
+.menu2:hover{
+	cursor: pointer;
+	color: #f60;
+}
+#logo{
+	background: white url(../img/welcome.jpg) no-repeat;
+	position: absolute;
+	top:0px;
+	left:0px;
+	padding:0;
+	margin:0;
+	z-index: 2;
+	height: 100%;
+	width:90%;
+}
+#login{
+	position: absolute;
+	top:0px;
+	left:80%;
+	padding:0;
+	margin:0;
+	z-index: 2;
+	height: 50px;
+	width:300px;
+}
+#settings{
+	position: absolute;
+	top:120px;
+	left:810px;
+	padding:0;
+	margin:0;
+	z-index: 5;
+	height: 500px;
+	width:400px;
+	
+}
+.sym{
+	position: absolute;
+	top:20px;
+	left:560px;
+	padding:0;
+	margin:0;
+	z-index: 2;
+	height: 400px;
+	width:300px;
+}
+#contents{
+	position: absolute;
+	top:80px;
+	left:635px;
+	padding:0;
+	margin:0;
+	background-color: white;
+	background-repeat : no-repeat;
+	z-index: 2;
+	height: 700px;
+	width:680px;
+	border-top: medium outset #36C;
+	border-left: thick outset #36C;
+	border-right: thick outset #36C;
+	border-bottom: medium outset #36C;
+}
+/* menu */
+.but{
+	padding:0px;
+	margin:1px;
+	color: #36C;
+	font-family:##fontname##;
+	font-size: 15px;
+	letter-spacing: 2px;
+	background-color:white;
+	text-decoration: none;
+	cursor:pointer;
+	height: 20px;
+	width:80px;
+	text-align:center;
+	border:none;
+}
+.but:hover{
+	color: #000;
+	cursor:pointer;
+	text-decoration:none;
+}
+/* tablica */
+.tab2{
+	width:850px;
+	border-top: medium outset #36C;
+	border-left: thick outset #36C;
+	border-right: thick outset #36C;
+	border-bottom: medium outset #36C;
+	padding:0px;
+	margin:0px;
+	overflow:auto; 
+}
+/* Link */
+a.git {
+      color:black;
+      margin:5px;
+      padding:5px;
+      font-size:20px;
+      font-weight:bold;
+      font-family:Arial;
+      text-decoration: underline;
+      cursor:pointer;
+}
+a.git:hover {
+      text-decoration: none;
+      cursor:pointer;
+}
+a.git:visited {
+      text-decoration: underline;
+      color:black;
+}
