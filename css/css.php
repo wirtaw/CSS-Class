@@ -8,6 +8,7 @@
 	    var $clear;
 	    var $elems=array();
 	    var $errors=array();
+	    var $type;
 	    public function getBrowser(){
 		  $u_agent = $_SERVER['HTTP_USER_AGENT'];
 		  $bname = 'Unknown';
@@ -286,6 +287,7 @@ div {
 		  $this->clear=$this->MakeClear();
 		  $this->elems=array();
 		  $this->errors=array();
+		  $this->type=$type;
 	    }
       }
       if(isset($_GET['type'])&&is_numeric($_GET['type'])){$type=intval($_GET['type']);}else{$type=1;}
