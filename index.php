@@ -10,6 +10,8 @@
       <li>Delete all free spaces</li>
       <li>Write to file</li>
       <li>Publish link to this in head file</li>
+      <li>Gzip in header</li>
+      <li>Three different types of including</li>
       </ul><br/>
       <h4>Addional options for different browsers and their versions</h4><br/>
       <ul class="list">
@@ -199,8 +201,8 @@ opacity:\$op;}","switch (\$this->browser['name']){
 		  if(isset($style->mobile)&&is_array($style->mobile)&&$style->mobile[1]){
 		  
 		  ?>
-		  <h1>CSS-Class Cros Browser Clean mobile<? echo $version; ?></h1>
-		  <span class="wrapper"></span>
+		  <h1>CSS-Class Cros Browser Clean mobile<? echo $version; ?></h1> 
+		  <span class="wrapper"> <a href="https://github.com/wirtaw/CSS-Class">Github</a> </span><br/>
 		  <div class="iframe_box">
 			<?php
 			echo '<br/><h2>Features</h2><br/>'.$features.'<span class="wrapper"></span>';
@@ -224,27 +226,27 @@ opacity:\$op;}","switch (\$this->browser['name']){
 		<div id="mid">
 		  <div id="leftcontent">
 			<?php
-			echo '<br/><h2>Sample</h2><br/>';
+			echo '<br/><h2>Samples</h2><br/>';
 			foreach($samples as $key => $value){
 			      echo '<div class="tab2">'.$value[2].'<br/><table style="width:100%;"><tr><td style="width:50%;">Before</td><td style="width:50%;">After</td></tr><tr><td><pre><code class="'.$value[0].'">'.$value[3].'</code></pre></td><td><pre><code class="'.$value[1].'">'.$value[4].'</code></pre></td></tr></table></div>';
 			}
 			?>
 		  </div>
 		  <br style="clear:both;"/>
-		  <div id="rightcontent">
+		  <div id="rightcontent"> <a href="https://github.com/wirtaw/CSS-Class" class="git">Github</a> <br/>
 			<?php
 			echo '<br/><h2>Features</h2><br/>'.$features;
 			echo '<br/><h2>Todo</h2><br/>'.$todo;
 			echo '<br/><h2>Fixed</h2><br/>'.$fixed;
 			/*if(isset($info)){
 			      var_dump($info);
-			}*/
+			}
 			if(isset($style)&&is_object($style)){
 			      //var_dump($style->elems);
 			      echo '<br/>fff<br/>';
 			      //var_dump($style->elems2);
 			}
-			echo '<span class="but">Button font</span>';
+			echo '<span class="but">Button font</span>';*/
 			?>
 		  </div>
 		</div>
