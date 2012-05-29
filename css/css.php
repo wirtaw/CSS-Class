@@ -209,6 +209,87 @@ div {
 		  
 		  return $str;
 	    }
+	    public function MakeFont($src,$name){
+			$str='@font-face {font-family: \''.$name.'\';';
+			switch ($this->browser['name']){
+			case 'Mozilla Firefox':
+			      if((double)$this->browser['version']>=3.5){
+				    if(file_exists($src.'.ttf'))$str2='url(\''.$src.'.ttf\') format(\'truetype\'),';
+			      } 
+			break;
+			case 'Internet Explorer':
+			      if((double)$this->browser['version']>=9.0){
+				    if(file_exists($src.'.woff'))$str2='url(\''.$src.'.woff\') format(\'woff\'),';
+			      }else{
+				    if(file_exists($src.'.eot'))$str2='src: url(\''.$src.'.eot\');
+				    src: url(\''.$src.'.eot?#iefix\') format(\'embedded-opentype\'),';
+			      }  
+			break;
+			case 'Google Chrome':
+			       if((double)$this->browser['version']>=4.0){
+				    if(file_exists($src.'.ttf'))$str2='url(\''.$src.'.ttf\') format(\'truetype\'),';
+			       }
+			break;
+			case 'Opera':
+			      if((double)$this->browser['version']>=10.0){
+				    if(file_exists($src.'.ttf'))$str2='url(\''.$src.'.ttf\') format(\'truetype\'),';
+			      }
+			break;
+			case 'Apple Safari':
+			      if((double)$this->browser['version']>=4.0){
+				    if(file_exists($src.'.ttf'))$str2='url(\''.$src.'.ttf\') format(\'truetype\'),';
+			      }
+			break;
+			case 'Netscape':
+			      if((double)$this->browser['version']>=4.0){
+						$str2='url(\''.$src.'.ttf\') format(\'truetype\'),';
+					}
+			break;
+			} 
+			if(isset($str2)&&trim($str2)!=''){
+			      $str.=$str2."font-weight: normal; font-style: normal;}";
+			}else{
+			      $str='';
+			}
+		  return $str;
+	    }
+	    public function ReplaceFont($name,$patt,$fr,$dec){
+		  if(!is_array($fr)){
+			if($dec&&strpos($fr,$patt)>0){
+			      $fr= str_replace($patt, $name, $fr);
+			}
+		  }else{
+			foreach($fr as $key => $value){
+			      if($dec&&strpos($value,$patt)>0){
+				  $fr[$key]=  str_replace($patt, $name, $value);
+			      }
+			}
+		  }
+		  return $fr;
+	    }
+	    public function FixImagePath($name,$patt,$fr){
+		  if(strpos($fr,$patt)>0){
+			$fr= str_replace($patt, $name, $fr);
+		  }
+		  return $fr;
+	    }
+	    public function Rounded($n,$color,$padding,$height){
+		  $str="/* Round corner from */ \n";
+		  for($i=1;$i<=$n;$i++){
+			if($i==$n){$str.=".r".$i;}else{$str.=".r".$i.",";}
+		  }
+		  $str.="{display: block; height: 1px; background: ".$color."; overflow: hidden;} ";
+		  $i=1;
+		  $m=$n+$i;
+		  while($i<$n){
+			$str.=".r".$i."{ margin: 0 ".$m."px; }\n";
+			$m-=2;
+			$i++;
+		  }
+		  $str.=".r".$n."{ margin: 0 1px; height: ".$height."px; }\n";
+		  $str.=".block-round-content  {background: ".$color."; /* Цвет фона */color: #fff;padding: ".$padding."px; /*  Поля вокруг текста */}";
+		  return $str;
+	    }
 	    public function Check($mas){
 		  $str='';
 		  for($i=0;$i<count($mas);$i++){
@@ -250,7 +331,8 @@ div {
 			$this->source.=$this->MakeHead();
 			$this->source.=$this->clear;
 			$this->source.="\n";
-
+			$this->source.=$this->MakeFont('fonts/lcsholbn-webfont.ttf','Lcsholbn');
+			$fr=$this->ReplaceFont('Lcsholbn','##fontname##',$fr,1);
 			$this->source.=$this->Check($fr);
 		  }
 	    public function Compress(){
