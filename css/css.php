@@ -302,18 +302,6 @@ div {
       }elseif($style->type==2){
       	header('Content-type: text/css');
   			ob_start("compress");
-  			$file_last_modified = filemtime($pageself);
-			$info=date ("D, d M Y H:i:s.", $file_last_modified);
-			header( "Last-Modified: " . date( "r", $file_last_modified ) );
-			$max_age = 300 * 24 * 60 * 60; // 300 days
-			$expires = $file_last_modified + $max_age;
-			header( "Expires: " . date( "r", $expires ) );
-			$etag = dechex( $file_last_modified );
-			header( "ETag: " . $etag );
-		
-			header("Cache-Control: no-store, no-cache, must-revalidate");// HTTP/1.1
-			header("Cache-Control: post-check=0, pre-check=0", false);
-			header("Pragma: no-cache");// HTTP/1.0
   			if (substr_count($_SERVER['HTTP_ACCEPT_ENCODING'], 'gzip')) ob_start("ob_gzhandler"); else ob_start("compress");
   			function compress($buffer) {
     			/* remove comments */
