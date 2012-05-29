@@ -531,6 +531,35 @@ Examples: <table class=\'break_word\'> or <div class=\'break_word\'>
 
 		  return $str;
 	    }
+	    public function MakeClearHTML5(){
+		  return 'a, abbr, acronym, address, applet, article, aside, audio,b, blockquote, big, body,center, canvas, caption, cite, code, command,datalist, dd, del, details, dfn, dl, div, dt, em, embed,fieldset, figcaption, figure, font, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html,i, iframe, img, ins,kbd, keygen,label, legend, li, meter,nav,object, ol, output,p, pre, progress,q, s, samp, section, small, span, source, strike, strong, sub, sup,table, tbody, tfoot, thead, th, tr, tdvideo, tt,u, ul,var{
+   background: transparent;
+   border: 0 none;
+   font-size: 100%;
+   margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+   vertical-align: top; 
+ }
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+table, table td { 
+	padding:0;
+	border:none;
+	border-collapse:collapse;
+}
+img{
+	vertical-align:top; 
+}
+embed{ 
+	vertical-align:top;
+}';
+	    }
 	    public function MakeButtons($backgrcolor,$size,$strength,$padding,$margin){
 		  $str="/* Make buttons http://mainview.ru/css/kak-sozdat-knopki-so-znachkami-bez-izobrazhenij-pri-pomoshhi-css3?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+mainviewru+%28Main+View+-+%D0%9A%D0%BE%D0%BF%D0%B8%D0%BB%D0%BA%D0%B0+%D1%80%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%87%D0%B8%D0%BA%D0%B0%29 */ \n.buttons{
 display: inline-block;
@@ -962,7 +991,7 @@ $str.='
 		  $this->source='';
 		  $this->browser=$this->getBrowser();
 		  $this->mobile=$this->mobile_device_detect();
-		  $this->clear=$this->MakeClear();
+		  $this->clear=$this->MakeClearHTML5();
 		  $this->elems=array();
 		  $this->errors=array();
 		  $this->type=$type;
