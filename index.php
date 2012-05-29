@@ -233,7 +233,7 @@ opacity:\$op;}","switch (\$this->browser['name']){
 			?>
 		  </div>
 		  <br style="clear:both;"/>
-		  <div id="rightcontent"> <a href="https://github.com/wirtaw/CSS-Class" class="git">Github</a> <br/>
+		  <div id="rightcontent"><img src="img/github.png" width="24" height="24" class="giticon"> <a href="https://github.com/wirtaw/CSS-Class" class="git">Github</a> <br/>
 			<?php
 			echo '<br/><h2>Features</h2><br/>'.$features;
 			echo '<br/><h2>Todo</h2><br/>'.$todo;
