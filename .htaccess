@@ -1,0 +1,49 @@
+# secure htaccess file
+<Files .htaccess>
+ order allow,deny
+ deny from all
+</Files>
+#htaccess Addtype`s
+AddType application/pdf .pdf
+AddType application/msword .doc
+AddType image/jpeg .jpg
+AddType image/png .png
+# htaccess custom error scripts
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteCond %{REQUEST_FILENAME} !-d
+
+################ Expires Control ################
+ExpiresActive On
+ExpiresDefault A0
+<FilesMatch "\.(gif|jpg|jpeg|png|swf)$">
+# 2 weeks
+ExpiresDefault A1209600
+Header append Cache-Control "public"
+</FilesMatch>
+<FilesMatch "\.(xml|txt|html)$">
+# 2 hours
+ExpiresDefault A7200
+Header append Cache-Control "proxy-revalidate"
+</FilesMatch>
+<FilesMatch "\.(js|css)$">
+# 3 days
+ExpiresDefault A259200
+Header append Cache-Control "proxy-revalidate"
+</FilesMatch>
+
+################## GZip Files ###################
+<FilesMatch "\.(js)">
+    AddHandler application/x-httpd-php .js
+php_value default_mimetype "text/javascript"
+    ForceType application/x-httpd-php
+    php_value auto_prepend_file "gzip-js.php"
+</FilesMatch>
+<FilesMatch "\.css$">
+AddHandler application/x-httpd-php .css
+php_value default_mimetype "text/css"
+</FilesMatch>
+<FilesMatch "\.(htm|html|shtml)$">
+AddHandler application/x-httpd-php .html
+php_value default_mimetype "text/html"
+</FilesMatch>
+php_value auto_prepend_file gzip.php
