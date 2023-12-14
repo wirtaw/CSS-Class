@@ -1,11 +1,11 @@
 repo_name: wirtaw/CSS-Class
-report_id: e9a66d86b9245fbe21803e8df6429dfb
+report_id: e1feb7c2447819e485f2a7996f069843
 repo_type: Public
-timestamp: '2023-11-11T19:47:17+00:00'
+timestamp: '2023-12-14T10:26:53+00:00'
 requested_by: wirtaw
 provider: github
 branch: master
-detected_tools_count: 4
+detected_tools_count: 7
 tools:
 - name: CSS 3
   description: The latest evolution of the Cascading Style Sheets language
@@ -36,6 +36,17 @@ tools:
   sub_category: Languages
   image_url: https://img.stackshare.io/service/991/hwUcGZ41_400x400.jpg
   detection_source: Repo Metadata
+- name: pgvector
+  description: Open-source vector similarity search for Postgres
+  website_url: https://github.com/pgvector/pgvector/
+  open_source: false
+  hosted_saas: false
+  category: Data Stores
+  sub_category: Database Tools
+  image_url: https://img.stackshare.io/service/109221/default_b888cdf5617d936aa6aacf130911906955508639.png
+  detection_source: highlight/AUTHORS.en.txt
+  last_updated_by: Vladimir Poplavskij
+  last_updated_on: 2018-03-03 20:23:27.000000000 Z
 - name: Git
   description: Fast, scalable, distributed revision control system
   website_url: http://git-scm.com/
@@ -45,3 +56,23 @@ tools:
   sub_category: Version Control System
   image_url: https://img.stackshare.io/service/1046/git.png
   detection_source: Repo Metadata
+- name: HTML
+  description: Hypertext Markup Language for creating web pages.
+  website_url: http://
+  open_source: false
+  hosted_saas: false
+  image_url: https://img.stackshare.io/service/2270/no-img-open-source.png
+  detection_source: highlight/export.html
+  last_updated_by: Vladimir Poplavskij
+  last_updated_on: 2018-03-03 20:23:27.000000000 Z
+- name: LangChain
+  description: Build AI apps with LLMs through composability
+  website_url: https://github.com/hwchase17/langchain
+  open_source: true
+  hosted_saas: false
+  category: Communications
+  sub_category: Large Language Model Tools
+  image_url: https://img.stackshare.io/service/48790/default_5b6c6b73f1ff3775c85d2a1ba954cb87e30cbf13.jpg
+  detection_source: highlight/AUTHORS.en.txt
+  last_updated_by: Vladimir Poplavskij
+  last_updated_on: 2018-03-03 20:23:27.000000000 Z
